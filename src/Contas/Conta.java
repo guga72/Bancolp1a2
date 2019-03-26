@@ -5,10 +5,10 @@ public class Conta {
     public String Titular;
     public double saldo;
 
-    public Conta(String n, String t){
+    public Conta(String t, String n){
         this.NumerodaConta = n;
         this.Titular = t;
-        this.saldo = 1000.00;
+        this.saldo = 0;
     }
 
 
@@ -23,7 +23,7 @@ public class Conta {
 
     public double sacar(double x){
         this.saldo = this.saldo - x;
-        return 0;
+        return this.saldo;
     }
 
     public String getNumerodaConta() {
@@ -31,7 +31,7 @@ public class Conta {
     }
 
     public void setNumerodaConta(String numerodaConta) {
-        NumerodaConta = numerodaConta;
+        this.NumerodaConta = numerodaConta;
     }
 
     public String getTitular() {
@@ -39,11 +39,11 @@ public class Conta {
     }
 
     public void setTitular(String titular) {
-        Titular = titular;
+        this.Titular = titular;
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public void setSaldo(double saldo) {

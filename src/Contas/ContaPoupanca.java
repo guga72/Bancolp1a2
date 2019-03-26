@@ -12,7 +12,7 @@ public class ContaPoupanca extends Conta {
         super(n, t);
     }
 
-    public void apicarRendimento(){
+    public void aplicarRendimento(){
         this.saldo = this.saldo + (this.saldo + this.taxaRendimento);
     }
 
