@@ -6,8 +6,20 @@ public class Conta {
     public double saldo;
 
     public Conta(String t, String n){
+	if(t == NULL || titular.trim().isEmpty()){
+		throw new TitularNullException("Titular não pode ser nulo ou vazio");
+	}
+	else{
+		this.titular = t;
+	}
+
+	if(n == NULL || NumerodaConta.trim().isEmpty()){
+		throw new NumerodaContaException("Número da conta não pode ser vazio");
+	}
+	else{
+		this.numeroConta = numeroConta;
+	}
         this.NumerodaConta = n;
-        this.Titular = t;
         this.saldo = 0;
     }
 
@@ -22,8 +34,13 @@ public class Conta {
     }
 
     public double sacar(double x){
+	if(x < this.saldo){
+		throw new SaqueBaixo("Saldo insuficiente");
+	}
+	else{
         this.saldo = this.saldo - x;
-        return this.saldo;
+	}
+	return this.saldo;
     }
 
     public String getNumerodaConta() {
