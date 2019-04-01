@@ -13,7 +13,12 @@ public class ContaPoupanca extends Conta {
     }
 
     public void aplicarRendimento(){
+	if(taxaRendimento == NULL){
+		throw new TaxaZerado("Taxa está zerada");
+	}
+	else{
         this.saldo = this.saldo + (this.saldo + this.taxaRendimento);
+	}
     }
 
 
