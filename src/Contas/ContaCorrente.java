@@ -6,7 +6,7 @@ public class ContaCorrente extends Conta {
     public String NumerodaConta;
     public String Titular;
     public double Saldo;
-    public double limiteChequeEspecial;
+    public double limiteChequeEspecial = 1000.00;
     public static double taxaJurosChequeEspecial = 0.05;
 
     public ContaCorrente(String n, String t) {
@@ -17,10 +17,16 @@ public class ContaCorrente extends Conta {
     public void debitarJuros(){
         this.saldo = this.saldo - (this.saldo * taxaJurosChequeEspecial);
     }
-
+    @Override
     public double sacar(double x){
-        x = x - x * 0.01;
-        return 0;
+	if(x < this.saldo){
+		throw new SaqueBaixo("Saldo insuficiente");
+	}
+	else{
+        	x = x + x * 0.01;
+        	this.saldo = this.saldo - x;
+	}
+	return this.saldo;
     }
 
     @Override
@@ -57,8 +63,11 @@ public class ContaCorrente extends Conta {
         return limiteChequeEspecial;
     }
 
-    public void setLimiteChequeEspecial(double limiteChequeEspecial) {
-        this.limiteChequeEspecial = limiteChequeEspecial;
+    public void setLimiteChequeEspecial(double li) {
+	if(this.limiteChequeEspecial == NULL){
+		throw new LimiteZerado("Limite zerado");
+	}
+        this.limiteChequeEspecial = limiteChequeEspecial - li;
     }
 
     public static double getTaxaJurosChequeEspecial() {
