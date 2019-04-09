@@ -6,18 +6,18 @@ public class Conta {
     public double saldo;
 
     public Conta(String t, String n){
-	if(t == NULL || titular.trim().isEmpty()){
-		throw new TitularNullException("Titular nÃ£o pode ser nulo ou vazio");
+	if(t == null || Titular.trim().isEmpty()){
+		throw new TitularNullException("Titular não pode ser nulo ou vazio");
 	}
 	else{
-		this.titular = t;
+		this.Titular = t;
 	}
 
-	if(n == NULL || NumerodaConta.trim().isEmpty()){
-		throw new NumerodaContaException("NÃºmero da conta nÃ£o pode ser vazio");
+	if(n == null || NumerodaConta.trim().isEmpty()){
+		throw new NumerodaContaException("Número da conta não pode ser vazio");
 	}
 	else{
-		this.numeroConta = numeroConta;
+		this.NumerodaConta = NumerodaConta;
 	}
         this.NumerodaConta = n;
         this.saldo = 0;

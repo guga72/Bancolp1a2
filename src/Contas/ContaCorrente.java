@@ -64,7 +64,7 @@ public class ContaCorrente extends Conta {
     }
 
     public void setLimiteChequeEspecial(double li) {
-	if(this.limiteChequeEspecial == NULL){
+	if(this.limiteChequeEspecial == 0){
 		throw new LimiteZerado("Limite zerado");
 	}
         this.limiteChequeEspecial = limiteChequeEspecial - li;

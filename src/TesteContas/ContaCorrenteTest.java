@@ -1,8 +1,6 @@
 package TesteContas;
 import Contas.Conta;
 import Contas.ContaCorrente;
-import static junit.framework.TestCase.assertNotNull;
-
 import org.junit.Test;
 
 public class ContaCorrenteTest {
