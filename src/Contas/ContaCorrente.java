@@ -19,14 +19,14 @@ public class ContaCorrente extends Conta {
     }
     @Override
     public double sacar(double x){
-	if(x < this.saldo){
+	if(x > this.saldo){
 		throw new SaqueBaixo("Saldo insuficiente");
 	}
 	else{
         	x = x + x * 0.01;
         	this.saldo = this.saldo - x;
 	}
-	return this.saldo;
+	return x;
     }
 
     @Override
