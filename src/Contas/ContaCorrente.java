@@ -19,14 +19,22 @@ public class ContaCorrente extends Conta {
     }
     @Override
     public double sacar(double x){
+<<<<<<< HEAD
 	if(x > this.saldo){
+=======
+	if(x < this.saldo){
+>>>>>>> 4f205d84174080cbf0a07669881302bfbf06b42a
 		throw new SaqueBaixo("Saldo insuficiente");
 	}
 	else{
         	x = x + x * 0.01;
         	this.saldo = this.saldo - x;
 	}
+<<<<<<< HEAD
 	return x;
+=======
+	return this.saldo;
+>>>>>>> 4f205d84174080cbf0a07669881302bfbf06b42a
     }
 
     @Override
@@ -64,7 +72,11 @@ public class ContaCorrente extends Conta {
     }
 
     public void setLimiteChequeEspecial(double li) {
+<<<<<<< HEAD
 	if(this.limiteChequeEspecial == 0){
+=======
+	if(this.limiteChequeEspecial == NULL){
+>>>>>>> 4f205d84174080cbf0a07669881302bfbf06b42a
 		throw new LimiteZerado("Limite zerado");
 	}
         this.limiteChequeEspecial = limiteChequeEspecial - li;
