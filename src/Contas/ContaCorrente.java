@@ -51,7 +51,7 @@ public class ContaCorrente extends Conta {
 
     @Override
     public double getSaldo() {
-        return Saldo;
+        return this.Saldo;
     }
 
     @Override
